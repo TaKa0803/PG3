@@ -1,31 +1,43 @@
 ﻿#include<stdio.h>
 #include<ctype.h>
 
-template<typename T>
-T checkNum(T a, T b) {	
-		if (a <= b) {
-			return a;
-		}
-		else {
-			return b;
-		}
-	
+
+int AddforNum(int base, int num) {
+	if (num == 1) {
+		return base;
+	}
+	else {
+		num--;
+		return base + AddforNum(base, num);
+	}
 }
 
-template<>
-char checkNum<char>(char a, char b) {
-	printf("数字以外は代入出来ません");
-	return'\n';
+
+int ComebackMoney(int base, int num) {
+	if (num <= 1) {
+		return base * 2 - 50;
+	}
+	else {
+		num--;
+
+		base = base * 2 - 50;
+		return base + ComebackMoney(base, num);
+	}
 }
 
 
 
 int main(void) {
 
-	printf("%d\n", checkNum<int>(10, 5));
-	printf("%4.1f\n", checkNum<float>(10.2f, 0.5f));
-	printf("%lf\n", checkNum<double>(10.2, 0.1));
-	printf("%c\n", checkNum('a', 'b'));
+	int Normal = 1072;
+
+	int comeB = 100;
+
+	int num = 8;
+
+	printf("%d\n", AddforNum(Normal, num));
+	printf("%d\n", comeB + ComebackMoney(comeB, num - 1));
+	printf("%d回\n", num);
 
 	return 0;
 }
