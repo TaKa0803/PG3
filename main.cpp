@@ -15,13 +15,13 @@ int AddforNum(int base, int num) {
 
 int ComebackMoney(int base, int num) {
 	if (num <= 1) {
-		return base * 2 - 50;
+		return base;
 	}
 	else {
 		num--;
 
-		base = base * 2 - 50;
-		return base + ComebackMoney(base, num);
+		int Base = base * 2 - 50;
+		return base + ComebackMoney(Base, num);
 	}
 }
 
@@ -36,7 +36,7 @@ int main(void) {
 	int num = 8;
 
 	printf("%d\n", AddforNum(Normal, num));
-	printf("%d\n", comeB + ComebackMoney(comeB, num - 1));
+	printf("%d\n", ComebackMoney(comeB, num));
 	printf("%d回\n", num);
 
 	return 0;
