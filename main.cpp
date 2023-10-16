@@ -2,13 +2,13 @@
 #include<Windows.h>
 #include<ctype.h>
 #include<time.h>
+#include<functional>
 
-
-typedef void (*PFunc)(int*);
+typedef void (*PFunc)(int);
 
 
 //コールバック関数
-void DispResult(int *ans) {
+void DispResult(int ans) {
 
 	//ランダム数字取得
 	unsigned int curtime = (unsigned int)time(nullptr);
@@ -20,11 +20,11 @@ void DispResult(int *ans) {
 
 	int checkans = number % 2;
 
-	if (*ans == '0') {
-		*ans = 0;
+	if (ans == '0') {
+		ans = 0;
 	}
-	if (*ans == '1') {
-		*ans = 1;
+	if (ans == '1') {
+		ans = 1;
 	}
 
 
@@ -34,7 +34,7 @@ void DispResult(int *ans) {
 
 
 
-		if (*ans==checkans)
+		if (ans==checkans)
 		{
 			printf("選んだのは丁！正解！\n");
 		}
@@ -44,7 +44,7 @@ void DispResult(int *ans) {
 	}
 	else {
 		printf("結果は半！\n");
-		if (*ans == checkans)
+		if (ans == checkans)
 		{
 			printf("選んだのは半！正解！\n");
 		}
@@ -57,11 +57,7 @@ void DispResult(int *ans) {
 	
 }
 
-void setTimeout(PFunc p, int ans) {
-	Sleep(3 * 1000);
 
-	p(&ans);
-}
 
 int main(void) {
 
@@ -90,9 +86,19 @@ int main(void) {
 	
 	printf("結果は\n");
 
+
+
+
 	PFunc p;
 	p = DispResult;
-	setTimeout(p, answer);
+
+	std::function<void(int)> setTimeout = [=](int i) {
+		Sleep(i * 1000);
+
+		p(answer);
+	};
+
+	setTimeout(3);
 
 
 	
