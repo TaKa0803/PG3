@@ -1,31 +1,100 @@
 ﻿#include<stdio.h>
+#include<Windows.h>
 #include<ctype.h>
+#include<time.h>
 
-template<typename T>
-T checkNum(T a, T b) {	
-		if (a <= b) {
-			return a;
+
+typedef void (*PFunc)(int*);
+
+
+//コールバック関数
+void DispResult(int *ans) {
+
+	//ランダム数字取得
+	unsigned int curtime = (unsigned int)time(nullptr);
+	srand(curtime);
+
+	int number = rand() % 6;
+
+	printf("%d!\n", number);
+
+	int checkans = number % 2;
+
+	if (*ans == '0') {
+		*ans = 0;
+	}
+	if (*ans == '1') {
+		*ans = 1;
+	}
+
+
+
+	if (checkans == 0) {
+		printf("結果は丁！\n");
+
+
+
+		if (*ans==checkans)
+		{
+			printf("選んだのは丁！正解！\n");
 		}
 		else {
-			return b;
+			printf("選んだのは半！残念！\n");
 		}
+	}
+	else {
+		printf("結果は半！\n");
+		if (*ans == checkans)
+		{
+			printf("選んだのは半！正解！\n");
+		}
+		else {
+			printf("選んだのは丁！残念！\n");
+		}
+	}
+
+
 	
 }
 
-template<>
-char checkNum<char>(char a, char b) {
-	printf("数字以外は代入出来ません");
-	return'\n';
+void setTimeout(PFunc p, int ans) {
+	Sleep(3 * 1000);
+
+	p(&ans);
 }
-
-
 
 int main(void) {
 
-	printf("%d\n", checkNum<int>(10, 5));
-	printf("%4.1f\n", checkNum<float>(10.2f, 0.5f));
-	printf("%lf\n", checkNum<double>(10.2, 0.1));
-	printf("%c\n", checkNum('a', 'b'));
+	printf("丁か半か選んでください（丁は０、半は１)\n");
+	
+	
+	int answer;
+	do
+	{
+		answer = getchar();
+		
+		if (isdigit(answer)) {
+			if (answer == '0' || answer == '1') {
+				break;
+			}
+			else {
+				printf("0か1を入力してください\n");
+			}
+		}
+		else {
+			printf("0か1を入力してください\n");
+		}
+	} while (true);
 
+	
+	
+	printf("結果は\n");
+
+	PFunc p;
+	p = DispResult;
+	setTimeout(p, answer);
+
+
+	
 	return 0;
 }
