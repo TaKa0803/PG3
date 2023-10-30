@@ -57,8 +57,8 @@ void DispResult(int *ans) {
 	
 }
 
-void setTimeout(PFunc p, int ans) {
-	Sleep(3 * 1000);
+void setTimeout(PFunc p,int waitSecond, int ans) {
+	Sleep(waitSecond * 1000);
 
 	p(&ans);
 }
@@ -92,7 +92,7 @@ int main(void) {
 
 	PFunc p;
 	p = DispResult;
-	setTimeout(p, answer);
+	setTimeout(p,3, answer);
 
 
 	
