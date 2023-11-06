@@ -92,7 +92,7 @@ int main(void) {
 
 	PFunc p;
 	p = DispResult;
-	setTimeout(p,3, answer);
+	setTimeout(p, 3, answer);
 
 
 	
