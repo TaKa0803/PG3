@@ -1,39 +1,46 @@
 ﻿#include<stdio.h>
 #include<ctype.h>
 
+
+
+
+void DrawNum(int num) {
+	printf("%d\n", num);
+	return;
+}
+void DrawNum(float num) {
+	printf("%f\n", num);
+	return;
+}
+void DrawNum(double num) {
+	printf("%lf\n", num);
+	return;
+}
+
+
 template<typename T>
 void checkNum(T a, T b) {
 	if (a <= b) {
 
-		if (T == int) {
-			printf("%d", a);
-		}
-		if (T == float) {
-			printf("%f", a);
-		}if (T == double) {
-			printf("%lf", a);
-		}if (T == char) {
-			printf("数字以外は代入出来ません");
-		}
+		DrawNum(a);
 
 		return;
 	}
 	else {
-		if (T == int) {
-			printf("%d", b);
-		}
-		if (T == float) {
-			printf("%f", b);
-		}if (T == double) {
-			printf("%lf", b);
-		}if (T == char) {
-			printf("数字以外は代入出来ません");
-		}
+		DrawNum(b);
 
 		return;
 	}
 
 }
+
+
+template<>
+void checkNum(char a, char b) {
+	printf("数字以外は代入出来ません\n");
+	return;
+}
+
 
 
 
