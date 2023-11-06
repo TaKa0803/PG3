@@ -1,7 +1,14 @@
 #include<stdio.h>
 
 
+class Enemy {
+public:
+	void Proximity();
 
+	void Shooting();
+
+	void Leave();
+};
 
 
 int main(void) {
