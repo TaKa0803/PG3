@@ -9,8 +9,9 @@ public:
 
 	virtual void draw() = 0;
 
-private:
+protected:
 
-	int size = 1;
+	int wide_ = 1;
 
+	float area_;
 };
