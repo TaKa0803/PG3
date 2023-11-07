@@ -128,15 +128,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Friend.cpp" />
-    <ClCompile Include="Human.cpp" />
+    <ClCompile Include="Circle.cpp" />
+    <ClCompile Include="IShape.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Me.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Friend.h" />
-    <ClInclude Include="Human.h" />
-    <ClInclude Include="Me.h" />
+    <ClInclude Include="Circle.h" />
+    <ClInclude Include="IShape.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
