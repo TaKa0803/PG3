@@ -21,12 +21,12 @@
     <ClCompile Include="main.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="Enemy.cpp">
+    <ClCompile Include="Min.cpp">
       <Filter>Enemy</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Enemy.h">
+    <ClInclude Include="Min.h">
       <Filter>Enemy</Filter>
     </ClInclude>
   </ItemGroup>

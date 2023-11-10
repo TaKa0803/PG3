@@ -1,5 +1,5 @@
 #include<stdio.h>
-#include"Enemy.h"
+#include"Min.h"
 
 
 
@@ -11,12 +11,14 @@
 
 int main(void) {
 
-	static Enemy* enemy = new Enemy;
+	Min<int>intNum(1, 5);
+	Min<float>floatNum(0.5f,-2.0f);
+	Min<double>doubleNum(0.1, 4.2);
 
-	enemy->Update();
+	printf("int型: %d\n", intNum.GetMinNum());
+	printf("float型: %f\n", floatNum.GetMinNum());
+	printf("double型: %lf\n", doubleNum.GetMinNum());
 
-
-	delete enemy;
 	
 	return 0;
 }
