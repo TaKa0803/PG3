@@ -1,20 +1,24 @@
 #include<stdio.h>
+#include"Enemy.h"
 
 
-class Enemy {
-public:
-	void Proximity();
 
-	void Shooting();
 
-	void Leave();
-};
+
+
+
 
 
 int main(void) {
 
-	printf("OW最高！OWをやめよう！\n");
+	static Enemy* enemy = new Enemy;
 
+	enemy->Update();
+
+
+	delete enemy;
 	
 	return 0;
 }
+
+
