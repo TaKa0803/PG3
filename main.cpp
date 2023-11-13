@@ -1,4 +1,4 @@
-﻿#include<stdio.h>
+#include<stdio.h>
 #include<Windows.h>
 #include<ctype.h>
 #include<time.h>
@@ -92,7 +92,7 @@ int main(void) {
 	PFunc p;
 	p = DispResult;
 
-	std::function<void(int)> setTimeout = [=](int i) {
+	std::function<void(int)> setTimeout = [&](int i) {
 		Sleep(i * 1000);
 
 		p(answer);
