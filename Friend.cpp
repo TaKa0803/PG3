@@ -11,5 +11,5 @@ Friend::~Friend() {
 }
 
 void Friend::Action() {
-	printf("%sは踊った！\n",name);
+	printf("%sは勉強をした！\n",name);
 }

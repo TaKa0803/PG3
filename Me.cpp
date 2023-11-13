@@ -13,6 +13,6 @@ Me::~Me() {
 
 
 void Me::Action() {
-	printf("%sは踊りを見て笑った！\n", name);
+	printf("%sは水泳をした!\n", name);
 
 }
