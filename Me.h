@@ -8,7 +8,7 @@ public:
 
 	~Me();
 
-	void Action()override;
+	void ActText()override;
 
 private:
 

@@ -10,6 +10,6 @@ Friend::~Friend() {
 	printf("%sが死んだ！\n", name);
 }
 
-void Friend::Action() {
+void Friend::ActText() {
 	printf("%sは勉強をした！\n",name);
 }

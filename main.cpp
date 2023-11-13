@@ -21,7 +21,7 @@ int main(void) {
 	printf("\n");
 	
 	for (int i = 0; i < 3; i++) {
-		humans[i]->Action();
+		humans[i]->ActText();
 	}
 	printf("\n");
 

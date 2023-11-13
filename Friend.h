@@ -8,7 +8,7 @@ public:
 
 	~Friend()override;
 
-	void Action() override;
+	void ActText() override;
 
 private:
 

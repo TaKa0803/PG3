@@ -8,7 +8,7 @@ public:
 
 	virtual ~Human();
 
-	virtual void Action();
+	virtual void ActText();
 
 protected:
 	const char* name;

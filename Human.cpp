@@ -7,5 +7,5 @@ Human::~Human() {
 
 }
 
-void Human::Action() {
+void Human::ActText() {
 }

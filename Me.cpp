@@ -12,7 +12,7 @@ Me::~Me() {
 }
 
 
-void Me::Action() {
+void Me::ActText() {
 	printf("%sは水泳をした!\n", name);
 
 }
