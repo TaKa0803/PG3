@@ -57,6 +57,11 @@ void DispResult(int ans) {
 	
 }
 
+void setTimeout(int i) {
+	Sleep(i * 1000);
+
+};
+
 
 
 int main(void) {
@@ -92,13 +97,12 @@ int main(void) {
 	PFunc p;
 	p = DispResult;
 
-	std::function<void(int)> setTimeout = [&](int i) {
-		Sleep(i * 1000);
-
+	std::function<void(void)> AnswerCommand = [&]() {
+		setTimeout(3);
 		p(answer);
 	};
 
-	setTimeout(3);
+	AnswerCommand();
 
 
 	
